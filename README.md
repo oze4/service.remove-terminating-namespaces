@@ -37,6 +37,8 @@
 
 ## INTRO
 
+**DISCLAIMER** in contrast to what you find online, [this technically was not the correct solution](#resolve-root-issue). Regardless, I am still happy I wrote this as it was an excellent learning experience for me.
+
 This microservice automates the steps outlined [in this article](https://medium.com/@craignewtondev/how-to-fix-kubernetes-namespace-deleting-stuck-in-terminating-state-5ed75792647e)
 
 ### IMPORTANT NOTE
