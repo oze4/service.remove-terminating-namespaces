@@ -14,6 +14,10 @@ subjects:
   namespace: default
 roleRef:
   kind: ClusterRole
+  ##########################################################################
+  # Instead of assigning cluster-admin you can create your own ClusterRole #
+  # I used cluster-admin because this is a homelab                         #
+  ##########################################################################
   name: cluster-admin
   apiGroup: rbac.authorization.k8s.io
 ---
