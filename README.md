@@ -2,7 +2,6 @@ This microservice finds namespaces in terminating state and removes them.
 
 - [Intro](#intro)
 - [Why?](#why?)
-- [Install](#installation)
 - [Usage](#usage)
 - [Details](#Details)
 - [Example](/deploy/cronjob.yaml)
@@ -15,7 +14,7 @@ This microservice automates the steps outlined [in this article](https://medium.
 
 Sometimes namespaces get stuck in terminating state.  I got sick of following the steps outlined in the [article above](#intro), so I wrote this.
 
-## INSTALLATION
+## USAGE
 
 *We assume all scripts are being invoked from the root of this project
 
