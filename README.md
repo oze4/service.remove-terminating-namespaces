@@ -28,12 +28,12 @@ This microservice finds namespaces in terminating state and removes them.
 
 #### How I found the offending ApiService
 
- - CTRL+F in the output .yaml file that was generated
+- CTRL+F in the output .yaml file that was generated
   - Use this search (copy and paste it exactly)
-   - `status = "False"`
- - Find the name of that ApiService
- - Follow the rest of the commands above, but using that ApiService name
- - Do this for all offending ApiService (any service that has `status = "False"`
+    - `status: "False"`
+- Find the name of that ApiService
+- Follow the rest of the commands above, but using that ApiService name
+- Do this for all offending ApiService (any service that has `status: "False"`
 
 ## INTRO
 
