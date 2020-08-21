@@ -37,13 +37,13 @@
 
 ## INTRO
 
-**DISCLAIMER** in contrast to what you find online, [this technically was not the correct solution](#resolve-root-issue). Regardless, I am still happy I wrote this as it was an excellent learning experience for me.
-
 This microservice automates the steps outlined [in this article](https://medium.com/@craignewtondev/how-to-fix-kubernetes-namespace-deleting-stuck-in-terminating-state-5ed75792647e)
 
 ### IMPORTANT NOTE
 
-Due to the fact this code was written for a home-lab, we assign `cluster-admin` permissions to the service account used to run the scheduled job pods. If this is not ideal for your scenario, you will need to configure your own ClusterRole ***inside*** of [rbac.yaml](/deploy/rbac.yaml)!
+- **DISCLAIMER** in contrast to what you find online, [this technically was not the correct solution](#resolve-root-issue). Regardless, I am still happy I wrote this as it was an excellent learning experience for me.
+
+- Due to the fact this code was written for a home-lab, we assign `cluster-admin` permissions to the service account used to run the scheduled job pods. If this is not ideal for your scenario, you will need to configure your own ClusterRole ***inside*** of [rbac.yaml](/deploy/rbac.yaml)!
 
 ## WHY?
 
