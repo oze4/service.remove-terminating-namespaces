@@ -31,7 +31,7 @@ kind: CronJob
 metadata:
   name: remove-terminating-namespaces-cronjob
 spec:
-  schedule: \"0 */1 * * *\" # at minute 0 of each hour aka once per hour
+  schedule: \"0 */1 * * *\" # at minute 0 of each hour aka once per hour at the top of the hour (h:00 where h is the current hour)
   #successfulJobsHistoryLimit: 0
   #failedJobsHistoryLimit: 0
   jobTemplate:
