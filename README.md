@@ -26,6 +26,15 @@ This microservice finds namespaces in terminating state and removes them.
 >
 >Hope that helps.
 
+#### How I found the offending ApiService
+
+ - CTRL+F in the output .yaml file that was generated
+  - Use this search (copy and paste it exactly)
+   - `status = "False"`
+ - Find the name of that ApiService
+ - Follow the rest of the commands above, but using that ApiService name
+ - Do this for all offending ApiService (any service that has `status = "False"`
+
 ## INTRO
 
 This microservice automates the steps outlined [in this article](https://medium.com/@craignewtondev/how-to-fix-kubernetes-namespace-deleting-stuck-in-terminating-state-5ed75792647e)
