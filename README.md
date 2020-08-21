@@ -3,6 +3,7 @@ This microservice finds namespaces in terminating state and removes them.
 - [Intro](#intro)
 - [Why?](#why?)
 - [Install](#installation)
+- [Usage](#usage)
 - [Details](#Details)
 - [Example](/deploy/cronjob.yaml)
 
@@ -16,7 +17,16 @@ Sometimes namespaces get stuck in terminating state.  I got sick of following th
 
 ## INSTALLATION
 
-See [demo deployment](/deploy)
+*We assume all scripts are being invoked from the root of this project
+
+ - If you would like to use this microservice in your own K8 environment AND store the container in your own DockerHub:
+   - `./scripts/deploy.sh --container_name yourcontainername`
+ - To only build container and push to your own DockerHub account:
+   - `./scripts/docker-build-push.sh --container_name yourcontainername`
+ - To only apply .yaml files:
+   - `./scritps/kubernetes-apply.sh --container_name yourcontainername`
+ - To delete containers:
+   - `./scritps/kubernetes-delete.sh`
 
 ## DETAILS
 

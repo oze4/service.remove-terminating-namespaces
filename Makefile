@@ -1,3 +1,5 @@
+CN=CONTAINER_NAME
+
 .PHONY: docker
 docker:
 	docker build --pull --rm -f "Dockerfile" -t oze4/service.remove-terminating-namespaces:latest "."

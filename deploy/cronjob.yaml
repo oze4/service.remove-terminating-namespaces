@@ -13,5 +13,5 @@ spec:
           serviceAccountName: svc-remove-terminating-namespaces
           containers:
           - name: remove-terminating-namespaces
-            image: oze4/service.remove-terminating-namespaces:latest
+            image: oze4/service.remove-terminating-namespaces:working
           restartPolicy: OnFailure
