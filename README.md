@@ -1,6 +1,7 @@
 This microservice finds namespaces in terminating state and removes them.
 
 - [Intro](#intro)
+  - [Important Note](#important-note)
 - [Why?](#why)
 - [Usage](#usage)
   - [Bash](#bash)
@@ -11,6 +12,10 @@ This microservice finds namespaces in terminating state and removes them.
 ## INTRO
 
 This microservice automates the steps outlined [in this article](https://medium.com/@craignewtondev/how-to-fix-kubernetes-namespace-deleting-stuck-in-terminating-state-5ed75792647e)
+
+### IMPORTANT NOTE
+
+Due to the fact this code was written for a home-lab, we assign `cluster-admin` permissions to the service account used to run the scheduled job pods. If this is not ideal for your scenario, you will need to configure your own ClusterRole ***inside*** `rbac.yaml`!
 
 ## WHY?
 
