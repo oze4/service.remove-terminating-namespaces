@@ -42,9 +42,9 @@ Sometimes namespaces get stuck in terminating state.  I got sick of following th
 ### Makefile
 
  - See the `Makefile.example` file at the root of this project
- - Change the variable on line 1 to your container name: 
-   - `CONTAINER_NAME = yourcontainername`
- - Rename from `Makefile.example` to just `Makefile`
+   - Change the variable on line 1 to your container name: 
+     - `CONTAINER_NAME = yourcontainername`
+   - Rename from `Makefile.example` to just `Makefile`
  - You now have access to the following commands:
    - `make deploy`
      - Same as running: `./scripts/deploy.sh --container_name yourcontainername` where `yourcontainername` is what you set the `CONTAINER_NAME` variable to be in the `Makefile`
