@@ -25,22 +25,9 @@ Sometimes namespaces get stuck in terminating state.  I got sick of following th
 
 *We assume all scripts are being invoked from the root of this project
 
-### Bash
-
- - If you would like to use this microservice in your own K8 environment AND store the container in your own DockerHub:
-   - `./scripts/deploy.sh --container_name yourcontainername`
- - To only build container and push to your own DockerHub account:
-   - `./scripts/docker-build-push.sh --container_name yourcontainername`
- - To only apply .yaml files:
-   - **PREFERRED:** (*should be ran at least once, in order to generae correct `deploy/cronjob.yaml` file*)
-     - `./scritps/kubernetes-apply.sh --container_name yourcontainername`
-   - **ONLY** apply existing .yaml files
-     - `./scritps/kubernetes-apply.sh`
- - To delete containers:
-   - `./scritps/kubernetes-delete.sh`
-
 ### Makefile
 
+ - PREFERRED OVER USING BASH
  - See the `Makefile.example` file at the root of this project
    - Change the variable on line 1 to your container name: 
      - `CONTAINER_NAME = yourcontainername`
@@ -54,6 +41,20 @@ Sometimes namespaces get stuck in terminating state.  I got sick of following th
      - Same as running: `./scritps/kubernetes-apply.sh --container_name yourcontainername` where `yourcontainername` is what you set the `CONTAINER_NAME` variable to be in the `Makefile`
    - `make kubernetes-delete`
      - Same as running: `./scritps/kubernetes-delete.sh`
+
+### Bash
+
+ - If you would like to use this microservice in your own K8 environment AND store the container in your own DockerHub:
+   - `./scripts/deploy.sh --container_name yourcontainername`
+ - To only build container and push to your own DockerHub account:
+   - `./scripts/docker-build-push.sh --container_name yourcontainername`
+ - To only apply .yaml files:
+   - **PREFERRED:** (*should be ran at least once, in order to generae correct `deploy/cronjob.yaml` file*)
+     - `./scritps/kubernetes-apply.sh --container_name yourcontainername`
+   - **ONLY** apply existing .yaml files
+     - `./scritps/kubernetes-apply.sh`
+ - To delete containers:
+   - `./scritps/kubernetes-delete.sh`
 
 ## DETAILS
 
