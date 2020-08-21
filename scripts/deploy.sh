@@ -20,6 +20,6 @@ done
 if [ -z "$container_name" ]; then
     printf '%s\n' "[ERROR] '--container_name' parameter not found! Please supply a container name like: ./this-script.sh --container_name yourcontainername"
 else
-	./docker-build-push.sh --container_name $container_name
+    ./docker-build-push.sh --container_name $container_name
     ./kubernetes-apply.sh --container_name $container_name
 fi

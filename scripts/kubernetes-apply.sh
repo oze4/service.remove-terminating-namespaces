@@ -37,8 +37,7 @@ spec:
           containers:
           - name: remove-terminating-namespaces
             image: $container_name
-          restartPolicy: OnFailure" > ./deploy/cronjob.yaml
-
+          restartPolicy: OnFailure" >./deploy/cronjob.yaml
 
     kubectl apply -f deploy/rbac.yaml
     kubectl apply -f deploy/cronjob.yaml

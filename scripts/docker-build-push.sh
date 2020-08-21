@@ -24,7 +24,7 @@ if [ -z "$container_name" ]; then
     printf '%s\n' "[ERROR] '--container_name' parameter not found! Please supply a container name like: ./this-script.sh --container_name yourcontainername"
 else
     # build docker image
-	docker build --pull --rm -f "Dockerfile" -t "$container_name" "."
+    docker build --pull --rm -f "Dockerfile" -t "$container_name" "."
     # push to docker hub
-	docker push "$container_name"
+    docker push "$container_name"
 fi
