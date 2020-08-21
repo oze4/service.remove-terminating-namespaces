@@ -1,0 +1,19 @@
+CONTAINER_NAME = oze4/service.remove-terminating-namespaces:latest
+
+.PHONY: docker
+docker:
+	./scripts/docker-build-push.sh --container_name ${CONTAINER_NAME}
+
+.PHONY: kubernetes
+kubernetes: kubernetes-delete kubernetes-apply
+
+.PHONY: kubernetes-apply
+kubernetes-apply:
+	./scripts/kubernetes-apply.sh --container_name ${CONTAINER_NAME}
+
+.PHONY: kubernetes-delete
+kubernetes-delete:
+	./scripts/kubernetes-delete.sh
+
+.PHONY: deploy
+deploy: docker kubernetes

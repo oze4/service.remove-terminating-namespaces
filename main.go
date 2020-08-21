@@ -23,7 +23,6 @@ func main() {
 	/* IN CLUSTER CONFIG */
 	clientset, initErr := kubeconfig.initInClusterClientConfig()
 
-	/* ERROR HANDLER FOR BOTH CONFIG TYPES */
 	if initErr != nil {
 		panic(initErr.Error())
 	}
@@ -36,13 +35,18 @@ func main() {
 	ishealthy := true
 	for _, ns := range nsList.Items {
 		if ns.Status.Phase == "Terminating" {
-			resp, getNsErr := clientset.CoreV1().RESTClient().Get().AbsPath("/api/v1/namespaces/" + ns.Name).DoRaw()
-			if getNsErr != nil {
+			resp := clientset.CoreV1().RESTClient().Get().AbsPath("/api/v1/namespaces/" + ns.Name).Do()
+			if getNsErr := resp.Error(); getNsErr != nil {
 				panic(getNsErr.Error())
 			}
 
+			respRaw, rawErr := resp.Raw()
+			if rawErr != nil {
+				panic(rawErr.Error())
+			}
+
 			var nsjson v1.Namespace
-			if umErr := json.Unmarshal(resp, &nsjson); umErr != nil {
+			if umErr := json.Unmarshal(respRaw, &nsjson); umErr != nil {
 				panic(umErr.Error())
 			}
 
@@ -54,9 +58,6 @@ func main() {
 				panic(mErr.Error())
 			}
 
-			/**
-			 * HAVE TO USE `.Do()` HERE!!! 
-			 */
 			r := clientset.CoreV1().RESTClient().Put().AbsPath("/api/v1/namespaces/" + ns.Name + "/finalize").Body(nsbody).Do()
 			if rErr := r.Error(); rErr != nil {
 				panic(rErr.Error())

@@ -3,7 +3,9 @@ This microservice finds namespaces in terminating state and removes them.
 - [Intro](#intro)
 - [Why?](#why)
 - [Usage](#usage)
-- [Details](#Details)
+  - [Bash](#bash)
+  - [Makefile](#makefile)
+- [Details](#details)
 - [Example](/deploy)
 
 ## INTRO
@@ -18,6 +20,8 @@ Sometimes namespaces get stuck in terminating state.  I got sick of following th
 
 *We assume all scripts are being invoked from the root of this project
 
+### Bash
+
  - If you would like to use this microservice in your own K8 environment AND store the container in your own DockerHub:
    - `./scripts/deploy.sh --container_name yourcontainername`
  - To only build container and push to your own DockerHub account:
@@ -29,6 +33,22 @@ Sometimes namespaces get stuck in terminating state.  I got sick of following th
      - `./scritps/kubernetes-apply.sh`
  - To delete containers:
    - `./scritps/kubernetes-delete.sh`
+
+### Makefile
+
+ - See the `Makefile.example` file at the root of this project
+ - Change the variable on line 1 to your container name: 
+   - `CONTAINER_NAME = yourcontainername`
+ - Rename from `Makefile.example` to just `Makefile`
+ - You now have access to the following commands:
+   - `make deploy`
+     - Same as running: `./scripts/deploy.sh --container_name yourcontainername` where `yourcontainername` is what you set the `CONTAINER_NAME` variable to be in the `Makefile`
+   - `make docker`
+     - Same as running: `./scripts/docker-build-push.sh --container_name yourcontainername` where `yourcontainername` is what you set the `CONTAINER_NAME` variable to be in the `Makefile`
+   - `make kubernetes-apply`
+     - Same as running: `./scritps/kubernetes-apply.sh --container_name yourcontainername` where `yourcontainername` is what you set the `CONTAINER_NAME` variable to be in the `Makefile`
+   - `make kubernetes-delete`
+     - Same as running: `./scritps/kubernetes-delete.sh`
 
 ## DETAILS
 
