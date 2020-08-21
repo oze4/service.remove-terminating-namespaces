@@ -16,7 +16,7 @@ This microservice finds namespaces in terminating state and removes them.
 
 >This is not the right way, especially in a production environment.
 >
->Today I got into the same problem. By removing the finalizer you’ll end up with leftovers in various states. You should actually find what is keeping the deletion >from complete.
+>Today I got into the same problem. By removing the finalizer you’ll end up with leftovers in various states. You should actually find what is keeping the deletion from complete.
 >
 >See https://github.com/kubernetes/kubernetes/issues/60807#issuecomment-524772920
 >
