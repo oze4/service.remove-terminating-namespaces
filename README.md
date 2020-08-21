@@ -4,7 +4,7 @@ This microservice finds namespaces in terminating state and removes them.
 - [Why?](#why)
 - [Usage](#usage)
 - [Details](#Details)
-- [Example](/deploy/cronjob.yaml)
+- [Example](/deploy)
 
 ## INTRO
 
