@@ -23,4 +23,4 @@ See [demo deployment](/deploy)
  - This microservice is designed to run as a `CronJob`
  - The way we interact with Kubernetes means this microservice should run *inside* the cluster (and not external to the cluster like you can do using `kubectl`)
    - This means you will need to create a `ServiceAccount` with proper RBAC
-   - **EXAMPLE `CronJob` DEPLOYMENT CAN BE [FOUND HERE](/deploy/cronjob.yaml)**
+   - **EXAMPLE DEPLOYMENT CAN BE [FOUND HERE](/deploy)**
