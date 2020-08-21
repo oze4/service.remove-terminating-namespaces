@@ -24,6 +24,8 @@ Sometimes namespaces get stuck in terminating state.  I got sick of following th
    - `./scripts/docker-build-push.sh --container_name yourcontainername`
  - To only apply .yaml files:
    - `./scritps/kubernetes-apply.sh --container_name yourcontainername`
+   - To write a new cronjob.yaml before applying:
+     - `./scritps/kubernetes-apply.sh --container_name yourcontainername --write_cronjob`
  - To delete containers:
    - `./scritps/kubernetes-delete.sh`
 
