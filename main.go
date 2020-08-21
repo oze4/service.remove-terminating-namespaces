@@ -71,6 +71,9 @@ func main() {
 	if ishealthy {
 		fmt.Println("All namespaces healthy! (eg: we could not find a namespace in Terminating state)")
 	}
+
+	// Exit in success, gracefully
+	os.Exit(0)
 }
 
 type kubeConfig struct{}
