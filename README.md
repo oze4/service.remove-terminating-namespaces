@@ -16,7 +16,7 @@ Sometimes namespaces get stuck in terminating state.  I got sick of following th
 
 ## INSTALLATION
 
-See [demo deployment](/deploy/cronjob.yaml)
+See [demo deployment](/deploy)
 
 ## DETAILS
 
