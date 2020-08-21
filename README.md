@@ -15,7 +15,7 @@ This microservice automates the steps outlined [in this article](https://medium.
 
 ### IMPORTANT NOTE
 
-Due to the fact this code was written for a home-lab, we assign `cluster-admin` permissions to the service account used to run the scheduled job pods. If this is not ideal for your scenario, you will need to configure your own ClusterRole ***inside*** `rbac.yaml`!
+Due to the fact this code was written for a home-lab, we assign `cluster-admin` permissions to the service account used to run the scheduled job pods. If this is not ideal for your scenario, you will need to configure your own ClusterRole ***inside*** of [rbac.yaml](/deploy/rbac.yaml)!
 
 ## WHY?
 
