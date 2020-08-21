@@ -1,4 +1,4 @@
-CONTAINER_NAME = oze4/service.remove-terminating-namespaces:latest
+CONTAINER_NAME = yourcontainername
 
 .PHONY: docker
 docker:
