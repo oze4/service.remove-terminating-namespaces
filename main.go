@@ -1,4 +1,3 @@
-// HIRING? https://mattoestreich.com
 package main
 
 import (
