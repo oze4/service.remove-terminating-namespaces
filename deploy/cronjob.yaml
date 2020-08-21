@@ -3,7 +3,7 @@ kind: CronJob
 metadata:
   name: remove-terminating-namespaces-cronjob
 spec:
-  schedule: "0 */1 * * *" # at minute 0 of each hour aka once per hour
+  schedule: "*/1 * * * *" # at minute 0 of each hour aka once per hour
   #successfulJobsHistoryLimit: 0
   #failedJobsHistoryLimit: 0
   jobTemplate:
@@ -13,5 +13,5 @@ spec:
           serviceAccountName: svc-remove-terminating-namespaces
           containers:
           - name: remove-terminating-namespaces
-            image: oze4/service.remove-terminating-namespaces:working
+            image: oze4/service.remove-terminating-namespaces:latest
           restartPolicy: OnFailure

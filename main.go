@@ -54,16 +54,10 @@ func main() {
 				panic(mErr.Error())
 			}
 
-			/* DO NOT CHAIN THESE! */
-			/* the only way I could get this to work was to not chain them */
-			/* it is also entirely possible using Do() vs DoRaw() is what fixed it */
-			cv1 := clientset.CoreV1()
-			rc := cv1.RESTClient()
-			p := rc.Put()
-			absp := p.AbsPath("/api/v1/namespaces/" + ns.Name + "/finalize")
-			req := absp.Body(nsbody)
-			r := req.Do()
-
+			/**
+			 * HAVE TO USE `.Do()` HERE!!! 
+			 */
+			r := clientset.CoreV1().RESTClient().Put().AbsPath("/api/v1/namespaces/" + ns.Name + "/finalize").Body(nsbody).Do()
 			if rErr := r.Error(); rErr != nil {
 				panic(rErr.Error())
 			}

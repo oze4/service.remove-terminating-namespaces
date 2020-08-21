@@ -23,9 +23,10 @@ Sometimes namespaces get stuck in terminating state.  I got sick of following th
  - To only build container and push to your own DockerHub account:
    - `./scripts/docker-build-push.sh --container_name yourcontainername`
  - To only apply .yaml files:
-   - `./scritps/kubernetes-apply.sh --container_name yourcontainername`
-   - To write a new cronjob.yaml before applying:
-     - `./scritps/kubernetes-apply.sh --container_name yourcontainername --write_cronjob`
+   - **PREFERRED:** (*should be ran at least once, in order to generae correct `deploy/cronjob.yaml` file*)
+     - `./scritps/kubernetes-apply.sh --container_name yourcontainername`
+   - **ONLY** apply existing .yaml files
+     - `./scritps/kubernetes-apply.sh`
  - To delete containers:
    - `./scritps/kubernetes-delete.sh`
 
