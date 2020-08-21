@@ -1,5 +1,6 @@
 This microservice finds namespaces in terminating state and removes them.
 
+- [How to resolve the root of this issue](#resolve-root-issue)
 - [Intro](#intro)
   - [Important Note](#important-note)
 - [Why?](#why)
@@ -8,6 +9,22 @@ This microservice finds namespaces in terminating state and removes them.
   - [Makefile](#makefile)
 - [Details](#details)
 - [Example](/deploy)
+
+# RESOLVE ROOT ISSUE
+
+[Taken from here](https://medium.com/@cristi.posoiu/this-is-not-the-right-way-especially-in-a-production-environment-190ff670bc62)
+
+>This is not the right way, especially in a production environment.
+>
+>Today I got into the same problem. By removing the finalizer you’ll end up with leftovers in various states. You should actually find what is keeping the deletion >from complete.
+>
+>See https://github.com/kubernetes/kubernetes/issues/60807#issuecomment-524772920
+>
+>(also, unfortunately, ‘kubetctl get all’ does not report all things, you need to use similar commands like in the link)
+>
+>My case — deleting ‘cert-manager’ namespace. In the output of ‘kubectl get apiservice -o yaml’ I found APIService ‘v1beta1.admission.certmanager.k8s.io’ with status=False . This apiservice was part of cert-manager, which I just deleted. So, in 10 seconds after I ‘kubectl delete apiservice v1beta1.admission.certmanager.k8s.io’ , the namespace disappeared.
+>
+>Hope that helps.
 
 ## INTRO
 
