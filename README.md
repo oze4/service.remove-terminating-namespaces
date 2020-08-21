@@ -1,4 +1,4 @@
-This microservice finds namespaces in terminating state and removes them.
+~~This microservice finds namespaces in terminating state and removes them.~~ Please see [How to resolve the root of this issue](#resolve-root-issue)
 
 - [How to resolve the root of this issue](#resolve-root-issue)
 - [Intro](#intro)
